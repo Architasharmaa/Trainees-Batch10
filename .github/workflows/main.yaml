@@ -36,3 +36,13 @@ jobs:
 - name: Run Javascript program
         run: |
           echo "Using ID: ${{ matrix.id }}"
+          
+  example_environment variables:
+  runs-on: ubuntu-latest
+  env:
+  First_variable : "12345"
+
+
+  steps:
+  -name: Print variable
+   run: echo "first_variable:-->$first variable"
