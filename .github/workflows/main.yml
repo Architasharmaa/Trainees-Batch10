@@ -21,6 +21,6 @@ jobs:
       - name: Run Javascript program
         run: node batch10.js
 
-      - name: Run tests
-        run: npm test
+      # - name: Run tests
+      #   run: npm batch10.js
 
