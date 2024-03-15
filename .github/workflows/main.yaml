@@ -26,3 +26,13 @@ jobs:
 
       - name: Run tests
         run: npm test
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        id: ['archita_sharma']  # Manually provided ID
+- name: Run Javascript program
+        run: |
+          echo "Using ID: ${{ matrix.id }}"
