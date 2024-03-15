@@ -1,4 +1,4 @@
-name: Javascript workflows
+name: Javascript_workflows
 
 on:
   push:
