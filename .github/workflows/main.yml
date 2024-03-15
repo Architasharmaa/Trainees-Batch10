@@ -22,7 +22,7 @@ jobs:
           node-version: '14' # You can specify any version you need
 
       - name: Run Javascript program
-        run: node my.js
+        run: node batch10.js
 
       - name: Run tests
         run: npm test
