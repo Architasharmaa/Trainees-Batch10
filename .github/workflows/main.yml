@@ -7,7 +7,7 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
@@ -17,6 +17,27 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14' # You can specify any version you need
+          secret_example:
+ 
+    # needs: Example_environment_variables
+ 
+    runs-on: self-hosted
+ 
+    steps:
+ 
+      - name: checkout code
+ 
+        uses: actions/checkout@v2
+ 
+      - name: Use a secret variable
+ 
+        env:
+ 
+          SECRET_TOKEN: ${{secrets.MY_SECRET}}
+ 
+        run: |
+ 
+            echo "The secret token is $SECRET_TOKEN"
 
       - name: Run Javascript program
         run: node batch10.js
