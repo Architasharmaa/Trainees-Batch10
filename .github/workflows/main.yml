@@ -1,85 +1,61 @@
-# name: Javascript_workflows
-
-# on:
-#   push:
-   
-#   pull_request:
-    
-# jobs:
-#   build:
-#     runs-on: self-hosted
-
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: '14' # You can specify any version you need
-#           secret_example:
+name: Python program
  
-#     # needs: Example_environment_variables
- 
-#     runs-on: self-hosted
- 
-#     steps:
- 
-#       - name: checkout code
- 
-#         uses: actions/checkout@v2
- 
-#       - name: Use a secret variable
- 
-#         env:
- 
-#           SECRET_TOKEN: ${{secrets.MY_SECRET}}
- 
-#         run: |
- 
-#             echo "The secret token is $SECRET_TOKEN"
-
-#       - name: Run Javascript program
-#         run: node batch10.js
-
-#       # - name: Run tests
-#       #   run: npm batch10.js
-
-name: Javascript_workflows
-
 on:
-  push:
-    branches:
-      - main # Adjust branch name if necessary
-  pull_request:
-    branches:
-      - main # Adjust branch name if necessary
-
+ 
+  workflow_dispatch
+ 
 jobs:
-  build:
+ 
+  Runs_the_Python_Program:
+ 
     runs-on: self-hosted
-
+ 
+    # runs-on: ubuntu-latest
+ 
     steps:
-      - name: Checkout code
+ 
+      - name: checkout content
+ 
         uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14' # You can specify any version you need
-
-      # Assuming you want to use a secret variable for something, uncomment and adjust as necessary
-      - name: Use a secret variable
-        env:
-          SECRET_TOKEN: ${{ secrets.MY_SECRET }}
-        run: |
-          echo "The secret token is $SECRET_TOKEN"
-
-      - name: Run JavaScript program
-        run: node batch10.js
-
-      # If you have tests to run, uncomment and adjust as necessary
-      - name: Run tests
-        run: npm test # Adjust this command according to your project setup
-
-
+ 
+      # - name: setup python
+ 
+      #   uses: actions/setup-python@v2
+ 
+        # with:
+ 
+        #   python-version: '3.11'
+ 
+      - name: run python program
+ 
+        run: python index.py
+ 
+  # Example_environment_variables:
+ 
+  #   needs: Runs_the_Python_Program
+   
+ 
+  #   # runs-on: ubuntu-latest
+ 
+  #   if: ${{always()}}
+ 
+  #   env:
+ 
+  #     First_name: "Hardik"
+ 
+  #   runs-on: self-hosted
+  #   steps:
+ 
+  #     - name: Accessing the environment variable
+ 
+  #       run: echo ${{env.First_name}}
+ 
+  # secret_example:
+ 
+  #   # needs: Example_environment_variables
+ 
+  #   runs-on: ubuntu-latest
+ 
+  #   steps:
+ 
+  #     - name: checkout code
