@@ -18,13 +18,13 @@ jobs:
  
         uses: actions/checkout@v2
  
-      - name: setup python
+      # - name: setup python
  
-        uses: actions/setup-python@v2
+      #   uses: actions/setup-python@v2
  
-        with:
+      #   with:
  
-          python-version: '3.11'
+      #     python-version: '3.11'
  
       - name: run python program
  
